@@ -1,0 +1,79 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-doctorant-my-suffix-heading" jhiTranslate="jhipsterrtestApp.doctorant.home.createOrEditLabel">Create or edit a Doctorant</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!doctorant.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="doctorant.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterrtestApp.doctorant.nationalite" for="field_nationalite">Nationalite</label>
+                    <input type="text" class="form-control" name="nationalite" id="field_nationalite"
+                        [(ngModel)]="doctorant.nationalite" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterrtestApp.doctorant.dateNissance" for="field_dateNissance">Date Nissance</label>
+                    <div class="d-flex">
+                        <input id="field_dateNissance" type="datetime-local" class="form-control" name="dateNissance" [(ngModel)]="dateNissance" placeholder="YYYY-MM-DD HH:mm"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterrtestApp.doctorant.sexe" for="field_sexe">Sexe</label>
+                    <input type="text" class="form-control" name="sexe" id="field_sexe"
+                        [(ngModel)]="doctorant.sexe" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterrtestApp.doctorant.etatCivil" for="field_etatCivil">Etat Civil</label>
+                    <input type="text" class="form-control" name="etatCivil" id="field_etatCivil"
+                        [(ngModel)]="doctorant.etatCivil" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterrtestApp.doctorant.adresse" for="field_adresse">Adresse</label>
+                    <input type="text" class="form-control" name="adresse" id="field_adresse"
+                        [(ngModel)]="doctorant.adresse" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterrtestApp.doctorant.profession" for="field_profession">Profession</label>
+                    <input type="text" class="form-control" name="profession" id="field_profession"
+                        [(ngModel)]="doctorant.profession" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterrtestApp.doctorant.employeur" for="field_employeur">Employeur</label>
+                    <input type="text" class="form-control" name="employeur" id="field_employeur"
+                        [(ngModel)]="doctorant.employeur" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterrtestApp.doctorant.profilePic" for="field_profilePic">Profile Pic</label>
+                    <div>
+                        <div *ngIf="doctorant.profilePic" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(doctorant.profilePicContentType, doctorant.profilePic)" jhiTranslate="entity.action.open">open</a><br>
+                            <span class="pull-left">{{doctorant.profilePicContentType}}, {{byteSize(doctorant.profilePic)}}</span>
+                            <button type="button" (click)="doctorant.profilePic=null;doctorant.profilePicContentType=null;"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_profilePic" (change)="setFileData($event, doctorant, 'profilePic', false)" jhiTranslate="entity.action.addblob"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="profilePic" id="field_profilePic"
+                        [(ngModel)]="doctorant.profilePic" />
+                    <input type="hidden" class="form-control" name="profilePicContentType" id="field_profilePicContentType"
+                        [(ngModel)]="doctorant.profilePicContentType" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

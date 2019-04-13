@@ -1,0 +1,36 @@
+{
+    "name": "LastTheses",
+    "fields": [
+        {
+            "fieldName": "anneeUniversitaire",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "etablissement",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sujetThese",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "doctorant",
+            "otherEntityRelationshipName": "lastTheses",
+            "relationshipName": "doctorant",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190413153544",
+    "entityTableName": "last_theses",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

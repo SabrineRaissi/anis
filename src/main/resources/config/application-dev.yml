@@ -38,7 +38,7 @@ spring:
         type: com.zaxxer.hikari.HikariDataSource
         url: jdbc:mysql://localhost:3306/jhipsterrtest?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC
         username: root
-        password:
+        password: root
         hikari:
             poolName: Hikari
             auto-commit: false
@@ -70,7 +70,7 @@ spring:
         cache: false
 
 server:
-    port: 8080
+    port: 8088
 
 # ===================================================================
 # JHipster specific properties
@@ -99,7 +99,7 @@ jhipster:
                 token-validity-in-seconds-for-remember-me: 2592000
     mail: # specific JHipster mail property, for standard properties see MailProperties
         from: jhipsterrtest@localhost
-        base-url: http://127.0.0.1:8080
+        base-url: http://127.0.0.1:8088
     metrics:
         logs: # Reports metrics in the logs
             enabled: false

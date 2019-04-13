@@ -1,0 +1,20 @@
+{
+    "jhipsterrtestApp": {
+        "statusSession": {
+            "home": {
+                "title": "StatusSessions",
+                "createLabel": "Créer un nouveau Status Session",
+                "createOrEditLabel": "Créer ou éditer un Status Session"
+            },
+            "created": "Un nouveau Status Session a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Status Session avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Status Session avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Status Session {{ id }} ?"
+            },
+            "detail": {
+                "title": "Status Session"
+            }
+        }
+    }
+}

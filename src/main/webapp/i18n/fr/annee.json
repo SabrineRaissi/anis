@@ -1,0 +1,12 @@
+{
+    "jhipsterrtestApp": {
+        "Annee": {
+            "null": "",
+            "PREMIERE_ANNEE": "PREMIERE_ANNEE",
+            "DEUXIEME_ANNEE": "DEUXIEME_ANNEE",
+            "TROSIEME_ANNEE": "TROSIEME_ANNEE",
+            "QUATRIEME_ANNEE": "QUATRIEME_ANNEE",
+            "CINQUIEME_ANNEE": "CINQUIEME_ANNEE"
+        }
+    }
+}

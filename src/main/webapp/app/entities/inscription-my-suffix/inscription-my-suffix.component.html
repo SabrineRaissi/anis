@@ -1,0 +1,84 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterrtestApp.inscription.home.title">Inscriptions</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-inscription-my-suffix" [routerLink]="['/inscription-my-suffix/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="jhipsterrtestApp.inscription.home.createLabel">
+            Create new Inscription
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="inscriptions">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="doctorantId"><span jhiTranslate="jhipsterrtestApp.inscription.doctorant">Doctorant</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="theseId"><span jhiTranslate="jhipsterrtestApp.inscription.these">These</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="statusInscriptionId"><span jhiTranslate="jhipsterrtestApp.inscription.statusInscription">Status Inscription</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="nextStepId"><span jhiTranslate="jhipsterrtestApp.inscription.nextStep">Next Step</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let inscription of inscriptions ;trackBy: trackId">
+                <td><a [routerLink]="['/inscription-my-suffix', inscription.id, 'view' ]">{{inscription.id}}</a></td>
+                <td>
+                    <div *ngIf="inscription.doctorantId">
+                        <a [routerLink]="['../doctorant-my-suffix', inscription.doctorantId , 'view' ]" >{{inscription.doctorantId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="inscription.theseId">
+                        <a [routerLink]="['../these-my-suffix', inscription.theseId , 'view' ]" >{{inscription.theseId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="inscription.statusInscriptionId">
+                        <a [routerLink]="['../status-inscription-my-suffix', inscription.statusInscriptionId , 'view' ]" >{{inscription.statusInscriptionId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="inscription.nextStepId">
+                        <a [routerLink]="['../etape-inscription-my-suffix', inscription.nextStepId , 'view' ]" >{{inscription.nextStepId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/inscription-my-suffix', inscription.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/inscription-my-suffix', inscription.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'inscription-my-suffix', { outlets: { popup: inscription.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="inscriptions && inscriptions.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

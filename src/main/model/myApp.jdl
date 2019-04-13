@@ -2,6 +2,7 @@
  * JHipster JDL model for myApp
  */
  
+ 
 entity Region {
     regionName String
 }
@@ -107,6 +108,275 @@ relationship OneToOne {
 // Set pagination options
 paginate JobHistory, Employee with infinite-scroll
 paginate Job with pagination
+enum Annee {
+  PREMIERE_ANNEE,
+  DEUXIEME_ANNEE,
+  TROSIEME_ANNEE,
+  QUATRIEME_ANNEE,
+  CINQUIEME_ANNEE
+}
+
+entity DeviceMetadata {
+  id Long,
+  userIdDevice Long,
+  deviceDetails String,
+  location String,
+  lastLoggedIn ZonedDateTime
+}
+
+entity PossibleValue {
+  id Long,
+  value String
+}
+
+entity LastTheses {
+  id Long,
+  anneeUniversitaire String,
+  etablissement String,
+  sujetThese String
+}
+
+entity Eligibility {
+  id Long,
+  criteria String,
+  score Float
+}
+
+
+entity EtapeInscription {
+  id Long,
+  etape String,
+  description String
+}
+
+entity Inscription {
+  id Long
+}
+
+entity Doctorant {
+  nationalite String,
+  dateNissance ZonedDateTime,
+  sexe String,
+  etatCivil String,
+  adresse String,
+  profession String,
+  employeur String,
+  profilePic Blob
+}
+
+entity Etablissement {
+  id Long,
+  nom String
+}
+
+entity These {
+  id Long,
+  designation String
+}
+
+entity AppStatus {
+  id Long,
+  designation String,
+  code Integer
+}
+
+entity StatusEtapeInscription {
+
+}
+
+entity EtudeUniversitaire {
+  id Long,
+  anneeUniversitaire String,
+  etablissement String,
+  diplome String,
+  niveauEtude String,
+  remarque String
+}
+
+entity StatusInscription {
+
+}
+
+entity SessionInscription {
+  id Long,
+  startDate ZonedDateTime,
+  endDate ZonedDateTime,
+  annee Annee
+}
+
+entity Privilege {
+  id Long,
+  name String
+}
+
+entity PasswordResetToken {
+  id Long,
+  token String,
+  expiryDate ZonedDateTime
+}
+
+entity StatusSession {
+
+}
+
+relationship ManyToOne {
+  LastTheses{doctorant} to Doctorant
+}
+
+relationship OneToMany {
+  Eligibility{possibleValues} to PossibleValue
+}
+
+relationship OneToOne {
+  Eligibility{etablissement} to Etablissement
+}
+
+
+
+relationship OneToOne {
+  EtapeInscription{next} to EtapeInscription
+}
+
+relationship OneToOne {
+  EtapeInscription{previous} to EtapeInscription
+}
+
+relationship OneToOne {
+  EtapeInscription{statusEtape} to StatusEtapeInscription
+}
+
+relationship OneToOne {
+  EtapeInscription{etablissement} to Etablissement
+}
+
+relationship OneToOne {
+  Inscription{doctorant} to Doctorant
+}
+
+relationship OneToOne {
+  Inscription{these} to These
+}
+
+relationship OneToOne {
+  Inscription{statusInscription} to StatusInscription
+}
+
+relationship OneToOne {
+  Inscription{nextStep} to EtapeInscription
+}
+
+
+
+relationship OneToOne {
+  These{etablissement} to Etablissement
+}
+
+relationship OneToMany {
+  These{eligibilites} to Eligibility
+}
+
+relationship ManyToOne {
+  EtudeUniversitaire{doctorant} to Doctorant
+}
+
+relationship OneToOne {
+  SessionInscription{these} to These
+}
+
+relationship OneToOne {
+  SessionInscription{etablissement} to Etablissement
+}
+
+relationship OneToOne {
+  SessionInscription{statusSession} to StatusSession
+}
+
+
+
+
+
+paginate DeviceMetadata with pagination
+
+paginate PossibleValue with pagination
+
+paginate LastTheses with pagination
+
+paginate Eligibility with pagination
+
+paginate EtapeInscription with pagination
+
+paginate Inscription with pagination
+
+paginate Doctorant with pagination
+
+paginate Etablissement with pagination
+
+paginate These with pagination
+
+paginate AppStatus with pagination
+
+
+
+paginate StatusEtapeInscription with pagination
+
+paginate EtudeUniversitaire with pagination
+
+paginate StatusInscription with pagination
+
+paginate SessionInscription with pagination
+
+paginate Privilege with pagination
+
+paginate PasswordResetToken with pagination
+
+paginate StatusSession with pagination
+
+
+service DeviceMetadata with serviceClass
+
+
+service PossibleValue with serviceClass
+
+
+service LastTheses with serviceClass
+
+
+service Eligibility with serviceClass
+
+
+service EtapeInscription with serviceClass
+
+service Inscription with serviceClass
+
+service Doctorant with serviceClass
+
+service Etablissement with serviceClass
+
+
+service These with serviceClass
+
+
+service AppStatus with serviceClass
+
+service StatusEtapeInscription with serviceClass
+
+
+service EtudeUniversitaire with serviceClass
+
+
+service StatusInscription with serviceClass
+
+
+service SessionInscription with serviceClass
+
+
+service Privilege with serviceClass
+
+
+service PasswordResetToken with serviceClass
+
+
+service StatusSession with serviceClass
 
 dto * with mapstruct
 

@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-last-theses-my-suffix-heading" jhiTranslate="jhipsterrtestApp.lastTheses.home.createOrEditLabel">Create or edit a Last Theses</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!lastTheses.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="lastTheses.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterrtestApp.lastTheses.anneeUniversitaire" for="field_anneeUniversitaire">Annee Universitaire</label>
+                    <input type="text" class="form-control" name="anneeUniversitaire" id="field_anneeUniversitaire"
+                        [(ngModel)]="lastTheses.anneeUniversitaire" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterrtestApp.lastTheses.etablissement" for="field_etablissement">Etablissement</label>
+                    <input type="text" class="form-control" name="etablissement" id="field_etablissement"
+                        [(ngModel)]="lastTheses.etablissement" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterrtestApp.lastTheses.sujetThese" for="field_sujetThese">Sujet These</label>
+                    <input type="text" class="form-control" name="sujetThese" id="field_sujetThese"
+                        [(ngModel)]="lastTheses.sujetThese" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterrtestApp.lastTheses.doctorant" for="field_doctorant">Doctorant</label>
+                    <select class="form-control" id="field_doctorant" name="doctorant" [(ngModel)]="lastTheses.doctorantId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="doctorantOption.id" *ngFor="let doctorantOption of doctorants; trackBy: trackDoctorantById">{{doctorantOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

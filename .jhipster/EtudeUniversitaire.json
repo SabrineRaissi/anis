@@ -1,0 +1,44 @@
+{
+    "name": "EtudeUniversitaire",
+    "fields": [
+        {
+            "fieldName": "anneeUniversitaire",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "etablissement",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "diplome",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "niveauEtude",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "remarque",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "doctorant",
+            "otherEntityRelationshipName": "etudeUniversitaire",
+            "relationshipName": "doctorant",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190413153553",
+    "entityTableName": "etude_universitaire",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

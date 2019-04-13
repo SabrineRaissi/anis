@@ -1,0 +1,35 @@
+{
+    "name": "These",
+    "fields": [
+        {
+            "fieldName": "designation",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "etablissement",
+            "otherEntityRelationshipName": "these",
+            "relationshipName": "etablissement",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "eligibility",
+            "otherEntityRelationshipName": "these",
+            "relationshipName": "eligibilites"
+        }
+    ],
+    "changelogDate": "20190413153550",
+    "entityTableName": "these",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

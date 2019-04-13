@@ -1,0 +1,20 @@
+{
+    "jhipsterrtestApp": {
+        "statusInscription": {
+            "home": {
+                "title": "StatusInscriptions",
+                "createLabel": "Créer un nouveau Status Inscription",
+                "createOrEditLabel": "Créer ou éditer un Status Inscription"
+            },
+            "created": "Un nouveau Status Inscription a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Status Inscription avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Status Inscription avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Status Inscription {{ id }} ?"
+            },
+            "detail": {
+                "title": "Status Inscription"
+            }
+        }
+    }
+}

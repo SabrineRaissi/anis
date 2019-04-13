@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="sessionInscription">
+            <h2><span jhiTranslate="jhipsterrtestApp.sessionInscription.detail.title">Session Inscription</span> {{sessionInscription.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterrtestApp.sessionInscription.startDate">Start Date</span></dt>
+                <dd>
+                    <span>{{sessionInscription.startDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterrtestApp.sessionInscription.endDate">End Date</span></dt>
+                <dd>
+                    <span>{{sessionInscription.endDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterrtestApp.sessionInscription.annee">Annee</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'jhipsterrtestApp.Annee.' + sessionInscription.annee}}">{{sessionInscription.annee}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterrtestApp.sessionInscription.these">These</span></dt>
+                <dd>
+                    <div *ngIf="sessionInscription.theseId">
+                        <a [routerLink]="['/these-my-suffix', sessionInscription.theseId, 'view']">{{sessionInscription.theseId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterrtestApp.sessionInscription.etablissement">Etablissement</span></dt>
+                <dd>
+                    <div *ngIf="sessionInscription.etablissementId">
+                        <a [routerLink]="['/etablissement-my-suffix', sessionInscription.etablissementId, 'view']">{{sessionInscription.etablissementId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterrtestApp.sessionInscription.statusSession">Status Session</span></dt>
+                <dd>
+                    <div *ngIf="sessionInscription.statusSessionId">
+                        <a [routerLink]="['/status-session-my-suffix', sessionInscription.statusSessionId, 'view']">{{sessionInscription.statusSessionId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/session-inscription-my-suffix', sessionInscription.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="eligibility">
+            <h2><span jhiTranslate="jhipsterrtestApp.eligibility.detail.title">Eligibility</span> {{eligibility.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterrtestApp.eligibility.criteria">Criteria</span></dt>
+                <dd>
+                    <span>{{eligibility.criteria}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterrtestApp.eligibility.score">Score</span></dt>
+                <dd>
+                    <span>{{eligibility.score}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterrtestApp.eligibility.etablissement">Etablissement</span></dt>
+                <dd>
+                    <div *ngIf="eligibility.etablissementId">
+                        <a [routerLink]="['/etablissement-my-suffix', eligibility.etablissementId, 'view']">{{eligibility.etablissementId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterrtestApp.eligibility.these">These</span></dt>
+                <dd>
+                    <div *ngIf="eligibility.theseId">
+                        <a [routerLink]="['/these-my-suffix', eligibility.theseId, 'view']">{{eligibility.theseId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/eligibility-my-suffix', eligibility.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

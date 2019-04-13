@@ -1,0 +1,24 @@
+{
+    "jhipsterrtestApp": {
+        "lastTheses": {
+            "home": {
+                "title": "LastTheses",
+                "createLabel": "Créer un nouveau Last Theses",
+                "createOrEditLabel": "Créer ou éditer un Last Theses"
+            },
+            "created": "Un nouveau Last Theses a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Last Theses avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Last Theses avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Last Theses {{ id }} ?"
+            },
+            "detail": {
+                "title": "Last Theses"
+            },
+            "anneeUniversitaire": "Annee Universitaire",
+            "etablissement": "Etablissement",
+            "sujetThese": "Sujet These",
+            "doctorant": "Doctorant"
+        }
+    }
+}

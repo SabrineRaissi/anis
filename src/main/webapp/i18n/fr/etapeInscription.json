@@ -1,0 +1,26 @@
+{
+    "jhipsterrtestApp": {
+        "etapeInscription": {
+            "home": {
+                "title": "EtapeInscriptions",
+                "createLabel": "Créer un nouveau Etape Inscription",
+                "createOrEditLabel": "Créer ou éditer un Etape Inscription"
+            },
+            "created": "Un nouveau Etape Inscription a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Etape Inscription avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Etape Inscription avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Etape Inscription {{ id }} ?"
+            },
+            "detail": {
+                "title": "Etape Inscription"
+            },
+            "etape": "Etape",
+            "description": "Description",
+            "next": "Next",
+            "previous": "Previous",
+            "statusEtape": "Status Etape",
+            "etablissement": "Etablissement"
+        }
+    }
+}

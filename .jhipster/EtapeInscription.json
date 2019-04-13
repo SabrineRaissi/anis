@@ -1,0 +1,57 @@
+{
+    "name": "EtapeInscription",
+    "fields": [
+        {
+            "fieldName": "etape",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "etapeInscription",
+            "otherEntityRelationshipName": "etapeInscription",
+            "relationshipName": "next",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "etapeInscription",
+            "otherEntityRelationshipName": "etapeInscription",
+            "relationshipName": "previous",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "statusEtapeInscription",
+            "otherEntityRelationshipName": "etapeInscription",
+            "relationshipName": "statusEtape",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "etablissement",
+            "otherEntityRelationshipName": "etapeInscription",
+            "relationshipName": "etablissement",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20190413153546",
+    "entityTableName": "etape_inscription",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

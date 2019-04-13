@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="deviceMetadata">
+            <h2><span jhiTranslate="jhipsterrtestApp.deviceMetadata.detail.title">Device Metadata</span> {{deviceMetadata.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterrtestApp.deviceMetadata.userIdDevice">User Id Device</span></dt>
+                <dd>
+                    <span>{{deviceMetadata.userIdDevice}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterrtestApp.deviceMetadata.deviceDetails">Device Details</span></dt>
+                <dd>
+                    <span>{{deviceMetadata.deviceDetails}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterrtestApp.deviceMetadata.location">Location</span></dt>
+                <dd>
+                    <span>{{deviceMetadata.location}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterrtestApp.deviceMetadata.lastLoggedIn">Last Logged In</span></dt>
+                <dd>
+                    <span>{{deviceMetadata.lastLoggedIn}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/device-metadata-my-suffix', deviceMetadata.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

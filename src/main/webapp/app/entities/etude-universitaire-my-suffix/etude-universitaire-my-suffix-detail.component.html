@@ -1,0 +1,49 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="etudeUniversitaire">
+            <h2><span jhiTranslate="jhipsterrtestApp.etudeUniversitaire.detail.title">Etude Universitaire</span> {{etudeUniversitaire.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterrtestApp.etudeUniversitaire.anneeUniversitaire">Annee Universitaire</span></dt>
+                <dd>
+                    <span>{{etudeUniversitaire.anneeUniversitaire}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterrtestApp.etudeUniversitaire.etablissement">Etablissement</span></dt>
+                <dd>
+                    <span>{{etudeUniversitaire.etablissement}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterrtestApp.etudeUniversitaire.diplome">Diplome</span></dt>
+                <dd>
+                    <span>{{etudeUniversitaire.diplome}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterrtestApp.etudeUniversitaire.niveauEtude">Niveau Etude</span></dt>
+                <dd>
+                    <span>{{etudeUniversitaire.niveauEtude}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterrtestApp.etudeUniversitaire.remarque">Remarque</span></dt>
+                <dd>
+                    <span>{{etudeUniversitaire.remarque}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterrtestApp.etudeUniversitaire.doctorant">Doctorant</span></dt>
+                <dd>
+                    <div *ngIf="etudeUniversitaire.doctorantId">
+                        <a [routerLink]="['/doctorant-my-suffix', etudeUniversitaire.doctorantId, 'view']">{{etudeUniversitaire.doctorantId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/etude-universitaire-my-suffix', etudeUniversitaire.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="doctorant">
+            <h2><span jhiTranslate="jhipsterrtestApp.doctorant.detail.title">Doctorant</span> {{doctorant.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterrtestApp.doctorant.nationalite">Nationalite</span></dt>
+                <dd>
+                    <span>{{doctorant.nationalite}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterrtestApp.doctorant.dateNissance">Date Nissance</span></dt>
+                <dd>
+                    <span>{{doctorant.dateNissance}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterrtestApp.doctorant.sexe">Sexe</span></dt>
+                <dd>
+                    <span>{{doctorant.sexe}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterrtestApp.doctorant.etatCivil">Etat Civil</span></dt>
+                <dd>
+                    <span>{{doctorant.etatCivil}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterrtestApp.doctorant.adresse">Adresse</span></dt>
+                <dd>
+                    <span>{{doctorant.adresse}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterrtestApp.doctorant.profession">Profession</span></dt>
+                <dd>
+                    <span>{{doctorant.profession}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterrtestApp.doctorant.employeur">Employeur</span></dt>
+                <dd>
+                    <span>{{doctorant.employeur}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterrtestApp.doctorant.profilePic">Profile Pic</span></dt>
+                <dd>
+                    <div *ngIf="doctorant.profilePic">
+                        <a (click)="openFile(doctorant.profilePicContentType, doctorant.profilePic)" jhiTranslate="entity.action.open">open</a>
+                        {{doctorant.profilePicContentType}}, {{byteSize(doctorant.profilePic)}}
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/doctorant-my-suffix', doctorant.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

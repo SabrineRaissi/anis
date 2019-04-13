@@ -1,0 +1,26 @@
+{
+    "jhipsterrtestApp": {
+        "etudeUniversitaire": {
+            "home": {
+                "title": "EtudeUniversitaires",
+                "createLabel": "Créer un nouveau Etude Universitaire",
+                "createOrEditLabel": "Créer ou éditer un Etude Universitaire"
+            },
+            "created": "Un nouveau Etude Universitaire a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Etude Universitaire avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Etude Universitaire avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Etude Universitaire {{ id }} ?"
+            },
+            "detail": {
+                "title": "Etude Universitaire"
+            },
+            "anneeUniversitaire": "Annee Universitaire",
+            "etablissement": "Etablissement",
+            "diplome": "Diplome",
+            "niveauEtude": "Niveau Etude",
+            "remarque": "Remarque",
+            "doctorant": "Doctorant"
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "jhipsterrtestApp": {
+        "possibleValue": {
+            "home": {
+                "title": "PossibleValues",
+                "createLabel": "Créer un nouveau Possible Value",
+                "createOrEditLabel": "Créer ou éditer un Possible Value"
+            },
+            "created": "Un nouveau Possible Value a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Possible Value avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Possible Value avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Possible Value {{ id }} ?"
+            },
+            "detail": {
+                "title": "Possible Value"
+            },
+            "value": "Value",
+            "eligibility": "Eligibility"
+        }
+    }
+}

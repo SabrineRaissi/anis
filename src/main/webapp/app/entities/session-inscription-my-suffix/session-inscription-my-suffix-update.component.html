@@ -1,0 +1,69 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-session-inscription-my-suffix-heading" jhiTranslate="jhipsterrtestApp.sessionInscription.home.createOrEditLabel">Create or edit a Session Inscription</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!sessionInscription.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="sessionInscription.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterrtestApp.sessionInscription.startDate" for="field_startDate">Start Date</label>
+                    <div class="d-flex">
+                        <input id="field_startDate" type="datetime-local" class="form-control" name="startDate" [(ngModel)]="startDate" placeholder="YYYY-MM-DD HH:mm"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterrtestApp.sessionInscription.endDate" for="field_endDate">End Date</label>
+                    <div class="d-flex">
+                        <input id="field_endDate" type="datetime-local" class="form-control" name="endDate" [(ngModel)]="endDate" placeholder="YYYY-MM-DD HH:mm"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterrtestApp.sessionInscription.annee" for="field_annee">Annee</label>
+                    <select class="form-control" name="annee" [(ngModel)]="sessionInscription.annee" id="field_annee" >
+                        <option value="PREMIERE_ANNEE">{{'jhipsterrtestApp.Annee.PREMIERE_ANNEE' | translate}}</option>
+                        <option value="DEUXIEME_ANNEE">{{'jhipsterrtestApp.Annee.DEUXIEME_ANNEE' | translate}}</option>
+                        <option value="TROSIEME_ANNEE">{{'jhipsterrtestApp.Annee.TROSIEME_ANNEE' | translate}}</option>
+                        <option value="QUATRIEME_ANNEE">{{'jhipsterrtestApp.Annee.QUATRIEME_ANNEE' | translate}}</option>
+                        <option value="CINQUIEME_ANNEE">{{'jhipsterrtestApp.Annee.CINQUIEME_ANNEE' | translate}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterrtestApp.sessionInscription.these" for="field_these">These</label>
+                    <select class="form-control" id="field_these" name="these" [(ngModel)]="sessionInscription.theseId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="theseOption.id" *ngFor="let theseOption of these; trackBy: trackTheseById">{{theseOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterrtestApp.sessionInscription.etablissement" for="field_etablissement">Etablissement</label>
+                    <select class="form-control" id="field_etablissement" name="etablissement" [(ngModel)]="sessionInscription.etablissementId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="etablissementOption.id" *ngFor="let etablissementOption of etablissements; trackBy: trackEtablissementById">{{etablissementOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterrtestApp.sessionInscription.statusSession" for="field_statusSession">Status Session</label>
+                    <select class="form-control" id="field_statusSession" name="statusSession" [(ngModel)]="sessionInscription.statusSessionId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="statusSessionOption.id" *ngFor="let statusSessionOption of statussessions; trackBy: trackStatusSessionById">{{statusSessionOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+{
+    "jhipsterrtestApp": {
+        "doctorant": {
+            "home": {
+                "title": "Doctorants",
+                "createLabel": "Créer un nouveau Doctorant",
+                "createOrEditLabel": "Créer ou éditer un Doctorant"
+            },
+            "created": "Un nouveau Doctorant a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Doctorant avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Doctorant avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Doctorant {{ id }} ?"
+            },
+            "detail": {
+                "title": "Doctorant"
+            },
+            "nationalite": "Nationalite",
+            "dateNissance": "Date Nissance",
+            "sexe": "Sexe",
+            "etatCivil": "Etat Civil",
+            "adresse": "Adresse",
+            "profession": "Profession",
+            "employeur": "Employeur",
+            "profilePic": "Profile Pic"
+        }
+    }
+}

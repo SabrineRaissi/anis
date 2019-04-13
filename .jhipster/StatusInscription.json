@@ -1,0 +1,15 @@
+{
+    "name": "StatusInscription",
+    "fields": [],
+    "relationships": [],
+    "changelogDate": "20190413153554",
+    "entityTableName": "status_inscription",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

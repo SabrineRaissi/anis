@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="appStatus">
+            <h2><span jhiTranslate="jhipsterrtestApp.appStatus.detail.title">App Status</span> {{appStatus.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterrtestApp.appStatus.designation">Designation</span></dt>
+                <dd>
+                    <span>{{appStatus.designation}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterrtestApp.appStatus.code">Code</span></dt>
+                <dd>
+                    <span>{{appStatus.code}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/app-status-my-suffix', appStatus.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

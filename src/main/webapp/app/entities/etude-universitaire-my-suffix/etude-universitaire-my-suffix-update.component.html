@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-etude-universitaire-my-suffix-heading" jhiTranslate="jhipsterrtestApp.etudeUniversitaire.home.createOrEditLabel">Create or edit a Etude Universitaire</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!etudeUniversitaire.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="etudeUniversitaire.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterrtestApp.etudeUniversitaire.anneeUniversitaire" for="field_anneeUniversitaire">Annee Universitaire</label>
+                    <input type="text" class="form-control" name="anneeUniversitaire" id="field_anneeUniversitaire"
+                        [(ngModel)]="etudeUniversitaire.anneeUniversitaire" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterrtestApp.etudeUniversitaire.etablissement" for="field_etablissement">Etablissement</label>
+                    <input type="text" class="form-control" name="etablissement" id="field_etablissement"
+                        [(ngModel)]="etudeUniversitaire.etablissement" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterrtestApp.etudeUniversitaire.diplome" for="field_diplome">Diplome</label>
+                    <input type="text" class="form-control" name="diplome" id="field_diplome"
+                        [(ngModel)]="etudeUniversitaire.diplome" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterrtestApp.etudeUniversitaire.niveauEtude" for="field_niveauEtude">Niveau Etude</label>
+                    <input type="text" class="form-control" name="niveauEtude" id="field_niveauEtude"
+                        [(ngModel)]="etudeUniversitaire.niveauEtude" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterrtestApp.etudeUniversitaire.remarque" for="field_remarque">Remarque</label>
+                    <input type="text" class="form-control" name="remarque" id="field_remarque"
+                        [(ngModel)]="etudeUniversitaire.remarque" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterrtestApp.etudeUniversitaire.doctorant" for="field_doctorant">Doctorant</label>
+                    <select class="form-control" id="field_doctorant" name="doctorant" [(ngModel)]="etudeUniversitaire.doctorantId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="doctorantOption.id" *ngFor="let doctorantOption of doctorants; trackBy: trackDoctorantById">{{doctorantOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

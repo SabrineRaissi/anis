@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity EtapeInscription.
+    -->
+    <changeSet id="20190413153546-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="next_id"
+                                 baseTableName="etape_inscription"
+                                 constraintName="fk_etape_inscription_next_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="etape_inscription"/>
+
+        <addForeignKeyConstraint baseColumnNames="previous_id"
+                                 baseTableName="etape_inscription"
+                                 constraintName="fk_etape_inscription_previous_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="etape_inscription"/>
+
+        <addForeignKeyConstraint baseColumnNames="status_etape_id"
+                                 baseTableName="etape_inscription"
+                                 constraintName="fk_etape_inscription_status_etape_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="status_etape_inscription"/>
+
+        <addForeignKeyConstraint baseColumnNames="etablissement_id"
+                                 baseTableName="etape_inscription"
+                                 constraintName="fk_etape_inscription_etablissement_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="etablissement"/>
+
+    </changeSet>
+</databaseChangeLog>

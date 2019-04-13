@@ -1,0 +1,24 @@
+{
+    "jhipsterrtestApp": {
+        "deviceMetadata": {
+            "home": {
+                "title": "DeviceMetadata",
+                "createLabel": "Créer un nouveau Device Metadata",
+                "createOrEditLabel": "Créer ou éditer un Device Metadata"
+            },
+            "created": "Un nouveau Device Metadata a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Device Metadata avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Device Metadata avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Device Metadata {{ id }} ?"
+            },
+            "detail": {
+                "title": "Device Metadata"
+            },
+            "userIdDevice": "User Id Device",
+            "deviceDetails": "Device Details",
+            "location": "Location",
+            "lastLoggedIn": "Last Logged In"
+        }
+    }
+}

@@ -1,0 +1,54 @@
+{
+    "name": "SessionInscription",
+    "fields": [
+        {
+            "fieldName": "startDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "endDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "annee",
+            "fieldType": "Annee",
+            "fieldValues": "PREMIERE_ANNEE,DEUXIEME_ANNEE,TROSIEME_ANNEE,QUATRIEME_ANNEE,CINQUIEME_ANNEE"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "these",
+            "otherEntityRelationshipName": "sessionInscription",
+            "relationshipName": "these",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "etablissement",
+            "otherEntityRelationshipName": "sessionInscription",
+            "relationshipName": "etablissement",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "statusSession",
+            "otherEntityRelationshipName": "sessionInscription",
+            "relationshipName": "statusSession",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20190413153555",
+    "entityTableName": "session_inscription",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

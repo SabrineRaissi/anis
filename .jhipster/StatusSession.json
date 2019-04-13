@@ -1,0 +1,15 @@
+{
+    "name": "StatusSession",
+    "fields": [],
+    "relationships": [],
+    "changelogDate": "20190413153558",
+    "entityTableName": "status_session",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

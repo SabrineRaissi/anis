@@ -1,0 +1,32 @@
+{
+    "name": "DeviceMetadata",
+    "fields": [
+        {
+            "fieldName": "userIdDevice",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "deviceDetails",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "location",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastLoggedIn",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190413153542",
+    "entityTableName": "device_metadata",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

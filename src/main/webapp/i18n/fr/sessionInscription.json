@@ -1,0 +1,26 @@
+{
+    "jhipsterrtestApp": {
+        "sessionInscription": {
+            "home": {
+                "title": "SessionInscriptions",
+                "createLabel": "Créer un nouveau Session Inscription",
+                "createOrEditLabel": "Créer ou éditer un Session Inscription"
+            },
+            "created": "Un nouveau Session Inscription a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Session Inscription avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Session Inscription avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Session Inscription {{ id }} ?"
+            },
+            "detail": {
+                "title": "Session Inscription"
+            },
+            "startDate": "Start Date",
+            "endDate": "End Date",
+            "annee": "Annee",
+            "these": "These",
+            "etablissement": "Etablissement",
+            "statusSession": "Status Session"
+        }
+    }
+}

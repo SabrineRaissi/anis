@@ -1,0 +1,22 @@
+{
+    "jhipsterrtestApp": {
+        "appStatus": {
+            "home": {
+                "title": "AppStatuses",
+                "createLabel": "Créer un nouveau App Status",
+                "createOrEditLabel": "Créer ou éditer un App Status"
+            },
+            "created": "Un nouveau App Status a été créé avec l'identifiant {{ param }}",
+            "updated": "Le App Status avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le App Status avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le App Status {{ id }} ?"
+            },
+            "detail": {
+                "title": "App Status"
+            },
+            "designation": "Designation",
+            "code": "Code"
+        }
+    }
+}

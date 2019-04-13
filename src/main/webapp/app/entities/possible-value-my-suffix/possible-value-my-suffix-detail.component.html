@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="possibleValue">
+            <h2><span jhiTranslate="jhipsterrtestApp.possibleValue.detail.title">Possible Value</span> {{possibleValue.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterrtestApp.possibleValue.value">Value</span></dt>
+                <dd>
+                    <span>{{possibleValue.value}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterrtestApp.possibleValue.eligibility">Eligibility</span></dt>
+                <dd>
+                    <div *ngIf="possibleValue.eligibilityId">
+                        <a [routerLink]="['/eligibility-my-suffix', possibleValue.eligibilityId, 'view']">{{possibleValue.eligibilityId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/possible-value-my-suffix', possibleValue.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="these">
+            <h2><span jhiTranslate="jhipsterrtestApp.these.detail.title">These</span> {{these.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterrtestApp.these.designation">Designation</span></dt>
+                <dd>
+                    <span>{{these.designation}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterrtestApp.these.etablissement">Etablissement</span></dt>
+                <dd>
+                    <div *ngIf="these.etablissementId">
+                        <a [routerLink]="['/etablissement-my-suffix', these.etablissementId, 'view']">{{these.etablissementId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/these-my-suffix', these.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

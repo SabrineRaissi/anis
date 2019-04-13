@@ -1,0 +1,52 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-inscription-my-suffix-heading" jhiTranslate="jhipsterrtestApp.inscription.home.createOrEditLabel">Create or edit a Inscription</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!inscription.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="inscription.id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterrtestApp.inscription.doctorant" for="field_doctorant">Doctorant</label>
+                    <select class="form-control" id="field_doctorant" name="doctorant" [(ngModel)]="inscription.doctorantId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="doctorantOption.id" *ngFor="let doctorantOption of doctorants; trackBy: trackDoctorantById">{{doctorantOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterrtestApp.inscription.these" for="field_these">These</label>
+                    <select class="form-control" id="field_these" name="these" [(ngModel)]="inscription.theseId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="theseOption.id" *ngFor="let theseOption of these; trackBy: trackTheseById">{{theseOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterrtestApp.inscription.statusInscription" for="field_statusInscription">Status Inscription</label>
+                    <select class="form-control" id="field_statusInscription" name="statusInscription" [(ngModel)]="inscription.statusInscriptionId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="statusInscriptionOption.id" *ngFor="let statusInscriptionOption of statusinscriptions; trackBy: trackStatusInscriptionById">{{statusInscriptionOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterrtestApp.inscription.nextStep" for="field_nextStep">Next Step</label>
+                    <select class="form-control" id="field_nextStep" name="nextStep" [(ngModel)]="inscription.nextStepId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="etapeInscriptionOption.id" *ngFor="let etapeInscriptionOption of nextsteps; trackBy: trackEtapeInscriptionById">{{etapeInscriptionOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

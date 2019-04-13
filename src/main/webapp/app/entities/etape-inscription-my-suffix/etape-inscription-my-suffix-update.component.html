@@ -1,0 +1,62 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-etape-inscription-my-suffix-heading" jhiTranslate="jhipsterrtestApp.etapeInscription.home.createOrEditLabel">Create or edit a Etape Inscription</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!etapeInscription.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="etapeInscription.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterrtestApp.etapeInscription.etape" for="field_etape">Etape</label>
+                    <input type="text" class="form-control" name="etape" id="field_etape"
+                        [(ngModel)]="etapeInscription.etape" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterrtestApp.etapeInscription.description" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                        [(ngModel)]="etapeInscription.description" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterrtestApp.etapeInscription.next" for="field_next">Next</label>
+                    <select class="form-control" id="field_next" name="next" [(ngModel)]="etapeInscription.nextId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="etapeInscriptionOption.id" *ngFor="let etapeInscriptionOption of nexts; trackBy: trackEtapeInscriptionById">{{etapeInscriptionOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterrtestApp.etapeInscription.previous" for="field_previous">Previous</label>
+                    <select class="form-control" id="field_previous" name="previous" [(ngModel)]="etapeInscription.previousId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="etapeInscriptionOption.id" *ngFor="let etapeInscriptionOption of previous; trackBy: trackEtapeInscriptionById">{{etapeInscriptionOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterrtestApp.etapeInscription.statusEtape" for="field_statusEtape">Status Etape</label>
+                    <select class="form-control" id="field_statusEtape" name="statusEtape" [(ngModel)]="etapeInscription.statusEtapeId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="statusEtapeInscriptionOption.id" *ngFor="let statusEtapeInscriptionOption of statusetapes; trackBy: trackStatusEtapeInscriptionById">{{statusEtapeInscriptionOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterrtestApp.etapeInscription.etablissement" for="field_etablissement">Etablissement</label>
+                    <select class="form-control" id="field_etablissement" name="etablissement" [(ngModel)]="etapeInscription.etablissementId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="etablissementOption.id" *ngFor="let etablissementOption of etablissements; trackBy: trackEtablissementById">{{etablissementOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

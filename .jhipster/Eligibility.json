@@ -1,0 +1,45 @@
+{
+    "name": "Eligibility",
+    "fields": [
+        {
+            "fieldName": "criteria",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "score",
+            "fieldType": "Float"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "etablissement",
+            "otherEntityRelationshipName": "eligibility",
+            "relationshipName": "etablissement",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "possibleValue",
+            "otherEntityRelationshipName": "eligibility",
+            "relationshipName": "possibleValues"
+        },
+        {
+            "relationshipName": "these",
+            "otherEntityName": "these",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190413153545",
+    "entityTableName": "eligibility",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

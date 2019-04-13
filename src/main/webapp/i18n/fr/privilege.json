@@ -1,0 +1,21 @@
+{
+    "jhipsterrtestApp": {
+        "privilege": {
+            "home": {
+                "title": "Privileges",
+                "createLabel": "Créer un nouveau Privilege",
+                "createOrEditLabel": "Créer ou éditer un Privilege"
+            },
+            "created": "Un nouveau Privilege a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Privilege avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Privilege avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Privilege {{ id }} ?"
+            },
+            "detail": {
+                "title": "Privilege"
+            },
+            "name": "Name"
+        }
+    }
+}

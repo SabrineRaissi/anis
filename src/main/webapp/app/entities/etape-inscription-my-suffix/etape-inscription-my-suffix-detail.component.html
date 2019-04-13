@@ -1,0 +1,55 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="etapeInscription">
+            <h2><span jhiTranslate="jhipsterrtestApp.etapeInscription.detail.title">Etape Inscription</span> {{etapeInscription.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterrtestApp.etapeInscription.etape">Etape</span></dt>
+                <dd>
+                    <span>{{etapeInscription.etape}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterrtestApp.etapeInscription.description">Description</span></dt>
+                <dd>
+                    <span>{{etapeInscription.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterrtestApp.etapeInscription.next">Next</span></dt>
+                <dd>
+                    <div *ngIf="etapeInscription.nextId">
+                        <a [routerLink]="['/etape-inscription-my-suffix', etapeInscription.nextId, 'view']">{{etapeInscription.nextId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterrtestApp.etapeInscription.previous">Previous</span></dt>
+                <dd>
+                    <div *ngIf="etapeInscription.previousId">
+                        <a [routerLink]="['/etape-inscription-my-suffix', etapeInscription.previousId, 'view']">{{etapeInscription.previousId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterrtestApp.etapeInscription.statusEtape">Status Etape</span></dt>
+                <dd>
+                    <div *ngIf="etapeInscription.statusEtapeId">
+                        <a [routerLink]="['/status-etape-inscription-my-suffix', etapeInscription.statusEtapeId, 'view']">{{etapeInscription.statusEtapeId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterrtestApp.etapeInscription.etablissement">Etablissement</span></dt>
+                <dd>
+                    <div *ngIf="etapeInscription.etablissementId">
+                        <a [routerLink]="['/etablissement-my-suffix', etapeInscription.etablissementId, 'view']">{{etapeInscription.etablissementId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/etape-inscription-my-suffix', etapeInscription.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+{
+    "jhipsterrtestApp": {
+        "these": {
+            "home": {
+                "title": "These",
+                "createLabel": "Créer un nouveau These",
+                "createOrEditLabel": "Créer ou éditer un These"
+            },
+            "created": "Un nouveau These a été créé avec l'identifiant {{ param }}",
+            "updated": "Le These avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le These avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le These {{ id }} ?"
+            },
+            "detail": {
+                "title": "These"
+            },
+            "designation": "Designation",
+            "etablissement": "Etablissement",
+            "eligibilites": "Eligibilites"
+        }
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "jhipsterrtestApp": {
+        "statusEtapeInscription": {
+            "home": {
+                "title": "StatusEtapeInscriptions",
+                "createLabel": "Créer un nouveau Status Etape Inscription",
+                "createOrEditLabel": "Créer ou éditer un Status Etape Inscription"
+            },
+            "created": "Un nouveau Status Etape Inscription a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Status Etape Inscription avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Status Etape Inscription avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Status Etape Inscription {{ id }} ?"
+            },
+            "detail": {
+                "title": "Status Etape Inscription"
+            }
+        }
+    }
+}

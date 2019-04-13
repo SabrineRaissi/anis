@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-device-metadata-my-suffix-heading" jhiTranslate="jhipsterrtestApp.deviceMetadata.home.createOrEditLabel">Create or edit a Device Metadata</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!deviceMetadata.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="deviceMetadata.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterrtestApp.deviceMetadata.userIdDevice" for="field_userIdDevice">User Id Device</label>
+                    <input type="number" class="form-control" name="userIdDevice" id="field_userIdDevice"
+                        [(ngModel)]="deviceMetadata.userIdDevice" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterrtestApp.deviceMetadata.deviceDetails" for="field_deviceDetails">Device Details</label>
+                    <input type="text" class="form-control" name="deviceDetails" id="field_deviceDetails"
+                        [(ngModel)]="deviceMetadata.deviceDetails" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterrtestApp.deviceMetadata.location" for="field_location">Location</label>
+                    <input type="text" class="form-control" name="location" id="field_location"
+                        [(ngModel)]="deviceMetadata.location" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterrtestApp.deviceMetadata.lastLoggedIn" for="field_lastLoggedIn">Last Logged In</label>
+                    <div class="d-flex">
+                        <input id="field_lastLoggedIn" type="datetime-local" class="form-control" name="lastLoggedIn" [(ngModel)]="lastLoggedIn" placeholder="YYYY-MM-DD HH:mm"
+                        />
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

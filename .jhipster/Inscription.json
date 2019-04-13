@@ -1,0 +1,48 @@
+{
+    "name": "Inscription",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "doctorant",
+            "otherEntityRelationshipName": "inscription",
+            "relationshipName": "doctorant",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "these",
+            "otherEntityRelationshipName": "inscription",
+            "relationshipName": "these",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "statusInscription",
+            "otherEntityRelationshipName": "inscription",
+            "relationshipName": "statusInscription",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "etapeInscription",
+            "otherEntityRelationshipName": "inscription",
+            "relationshipName": "nextStep",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20190413153547",
+    "entityTableName": "inscription",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}
